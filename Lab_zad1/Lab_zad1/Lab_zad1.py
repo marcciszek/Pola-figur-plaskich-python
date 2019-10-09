@@ -4,9 +4,10 @@ import math
 
 print('Wybierz figure\n 1.Kwadrat\n 2.Prostokat\n 3.Trojkat\n 4.Kolo: ') #\n przechodzi do nowej linii
 print("Podaj odpowiadajaca cyfre: ")
+
 while True: #petla sprawdzajaca poprawnosc podanego wyboru
     figura = input()
-    if figura == '1' or '2' or '3' or '4': #dostepne wybory
+    if figura in('1','2','3','4'): #dostepne wybory
         break
     else:
         os.system('cls')
