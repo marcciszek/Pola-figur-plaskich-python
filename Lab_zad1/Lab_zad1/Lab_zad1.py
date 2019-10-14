@@ -1,4 +1,4 @@
-import time     #biblioteka dzięki ktorej zatrzymujemy program na okreslony czs
+import time     #biblioteka dzieki ktorej zatrzymujemy program na okreslony czas
 import os       #biblioteka pozwalajaca czyscic okno konsoli
 import math     #biblioteka zawierajaca liczbe PI
 
@@ -11,7 +11,7 @@ glowne_menu='''
  4.Kolo:
 '''
 
-print(glowne_menu)    #\n przechodzi do nowej linii
+print(glowne_menu)    
 print(" Podaj odpowiadajaca cyfre")
 
 while True:     #petla sprawdzajaca poprawnosc podanego wyboru
@@ -26,7 +26,7 @@ while True:     #petla sprawdzajaca poprawnosc podanego wyboru
 os.system('cls') #czyszczenie konsoli
 
 if wybor_uzytkownika == '1':    #figura jest stringiem, dlatego wybory sa postaci 'x'
-    print("\n Wybrales kwadrat\n\n Podaj dlugosc boku")
+    print("\n Wybrales kwadrat\n\n Podaj dlugosc boku")  #\n przechodzi do nowej linii
     dl_bok = float(input(' >'))  #dlugosc boku pobierana jako liczba zmiennoprzecinkowa
     pole = dl_bok**2
     os.system('cls')
