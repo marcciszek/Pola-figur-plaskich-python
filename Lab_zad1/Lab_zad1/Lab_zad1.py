@@ -1,56 +1,62 @@
-import time
-import os
-import math
+import time     #biblioteka dzięki której zatrzymujemy program na okreslony czs
+import os       #biblioteka pozwalajaca czyscic okno konsoli
+import math     #biblioteka zawierajaca liczbe PI
 
-print('Wybierz figure\n 1.Kwadrat\n 2.Prostokat\n 3.Trojkat\n 4.Kolo: ') #\n przechodzi do nowej linii
-print("Podaj odpowiadajaca cyfre: ")
+dostepne_wybory = ('1','2','3','4') #pula wyborow dostepnych dla uzytkownika
+glowne_menu='''
+ Wybierz figure
+ 1.Kwadrat
+ 2.Prostokat
+ 3.Trojkat
+ 4.Kolo:
+'''
 
-while True: #petla sprawdzajaca poprawnosc podanego wyboru
-    figura = input()
-    if figura in('1','2','3','4'): #dostepne wybory
+print(glowne_menu)    #\n przechodzi do nowej linii
+print(" Podaj odpowiadajaca cyfre")
+
+while True:     #petla sprawdzajaca poprawnosc podanego wyboru
+    wybor_uzytkownika = input(' >')  #pobranie wyboru od uzytkownika
+    if wybor_uzytkownika in(dostepne_wybory):  #sprawdzenie czy wybor jest dostepny
         break
     else:
         os.system('cls')
-        print('Wybierz figure\n 1.Kwadrat\n 2.Prostokat\n 3.Trojkat\n 4.Kolo: ')
-        print('Podaj poprawna cyfre')
+        print(glowne_menu)
+        print(' Podaj poprawna cyfre')
 
 os.system('cls') #czyszczenie konsoli
 
-if figura == '1': #figura jest stringiem, dlatego wybory cyfry sa postaci 'x'
-    print("Wybrales kwadrat\nPodaj dlugosc boku")
-    dl_bok = float(input()) #dlugosc boku pobierana jako liczba zmiennoprzecinkowa
+if wybor_uzytkownika == '1':    #figura jest stringiem, dlatego wybory cyfry sa postaci 'x'
+    print("\n Wybrales kwadrat\n\n Podaj dlugosc boku")
+    dl_bok = float(input(' >'))  #dlugosc boku pobierana jako liczba zmiennoprzecinkowa
     pole = dl_bok**2
     os.system('cls')
-    print('Pole powierzchni dla kwadratu wynosi')
-    print(dl_bok,'^ 2 =',pole)
+    print(f"\n Pole kwadratu {dl_bok} ^ 2 = {pole}")
     
-if figura == '2':
-    print("Wybrales prostokat\nPodaj dlugosc boku a")
-    dl_bok_a = float(input())
-    print("Podaj dlugosc boku b")
-    dl_bok_b = float(input())
+if wybor_uzytkownika == '2':
+    print("\n Wybrales prostokat\n\n Podaj dlugosc boku a")
+    dl_bok_a = float(input(' >'))
+    print(" Podaj dlugosc boku b")
+    dl_bok_b = float(input(' >'))
     pole = dl_bok_a*dl_bok_b
     os.system('cls')
-    print('Pole powierzchni dla prostokatu wynosi')
-    print(dl_bok_a,' * ',dl_bok_b,' = ',pole)
+    print(f"\n Pole prostokatu {dl_bok_a} * {dl_bok_b} = {pole}")
 
-if figura == '3':
-    print("Wybrales trojkat\nPodaj dlugosc podstawy")
-    dl_podstawy = float(input())
-    print("Podaj wysokosc")
-    wysokosc = float(input())
+if wybor_uzytkownika == '3':
+    print("\n Wybrales trojkat\n\n Podaj dlugosc podstawy")
+    dl_podstawy = float(input(' >'))
+    print(" Podaj wysokosc")
+    wysokosc = float(input(' >'))
     pole = (dl_podstawy * wysokosc) / 2.0
     os.system('cls')
-    print('Pole powierzchni dla trojkata wynosi')
-    print('(',dl_podstawy,' * ',wysokosc,')','/ 2 = ',pole)
+    print(f"\n Pole trojkata ({dl_podstawy} * {wysokosc}) / 2 = {pole}")
 
 
-if figura == '4':
-    print("Wybrales kolo\nPodaj dlugosc promienia")
-    promien = float(input())
+if wybor_uzytkownika == '4':
+    print("\n Wybrales kolo\n\n Podaj dlugosc promienia")
+    promien = float(input(' >'))
     pole = promien**2*math.pi
-    print('pole powierzchni dla kola wynosi')
-    print(promien,'^ 2 * PI = ',pole)
+    os.system('cls')
+    print(f"\n Pole kola {promien} ^ 2 * {round(math.pi,4)} = {round(pole,4)}")  #zaokraglenie(zmienna,ilosc miejsc po przecinku) 
+    print()
 
 time.sleep(10)
-
