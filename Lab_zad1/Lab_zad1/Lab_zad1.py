@@ -1,4 +1,3 @@
-import time     #biblioteka dzieki ktorej zatrzymujemy program na okreslony czas
 import os       #biblioteka pozwalajaca czyscic okno konsoli
 import math     #biblioteka zawierajaca liczbe PI
 
@@ -76,9 +75,8 @@ def kolo():
     promien = Sprawdzenie()
     pole = promien**2*math.pi
     os.system('cls')
-    print(f"\n Pole kola {promien} ^ 2 * {round(math.pi,4)} = {round(pole,4)}")  #zaokraglenie(zmienna,ilosc miejsc po przecinku) 
-
-
+    print(f"\n Pole kola {promien} ^ 2 * {round(math.pi,4)} = {round(pole,4)}")  
+                               #zaokraglenie(zmienna,ilosc miejsc po przecinku) 
 
 while True: #Zapetla Dzialanie programu   
     os.system('cls')
@@ -108,5 +106,3 @@ while True: #Zapetla Dzialanie programu
         kolo()
         if koniec_programu()==True:
             break
-
-time.sleep(1)
