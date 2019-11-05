@@ -1,6 +1,6 @@
 import os       #biblioteka pozwalajaca czyscic okno konsoli
 import math     #biblioteka zawierajaca liczbe PI
-
+#github
 
 def Sprawdzenie(): #funkcja sprawdzajaca czy podana wartosc jest poprawna
         while True:
